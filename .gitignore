@@ -1,0 +1,15 @@
+# Build artifacts
+build/
+lib/
+*.o
+*.a
+
+# Documentation (generated)
+docs/
+
+# Editor/IDE files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

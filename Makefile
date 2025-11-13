@@ -1,8 +1,15 @@
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -std=c11 -pedantic -D_POSIX_C_SOURCE=200809L
-LDFLAGS = 
+LDFLAGS =
 INCLUDES = -Iinclude
+
+# AddressSanitizer support (use: make tests ASAN=1)
+ifdef ASAN
+    ASAN_FLAGS = -fsanitize=address -fno-omit-frame-pointer -g
+    CFLAGS += $(ASAN_FLAGS)
+    LDFLAGS += $(ASAN_FLAGS)
+endif
 
 # Directories
 SRC_DIR = src
